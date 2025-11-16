@@ -1,0 +1,281 @@
+/* ============================================================
+   ADMIN DASHBOARD - STYLESHEET
+   ============================================================ */
+
+/* ROOT VARIABLES */
+:root {
+    --bg: #f4f7fb;
+    --card: #fff;
+    --accent: #2b6cb0;
+    --text-primary: #0f1724;
+    --text-secondary: #334155;
+    --border: #e2e8f0;
+    --success: #16a34a;
+    --danger: #dc2626;
+}
+
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+/* ============================================================
+   SIDEBAR NAVIGATION
+   ============================================================ */
+
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #1e40af 0%, #2b6cb0 100%);
+    color: #fff;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 32px 0;
+    font-size: 1.2em;
+    letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-left: 4px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+    font-size: 1em;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid #f90000;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+.content {
+    flex: 1;
+    padding: 32px 40px;
+}
+
+/* ============================================================
+   CARDS & CONTAINERS
+   ============================================================ */
+
+.card {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(12, 24, 40, 0.08);
+    margin-bottom: 24px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 1.3em;
+    color: var(--text-primary);
+}
+
+/* ============================================================
+   MESSAGES & ALERTS
+   ============================================================ */
+
+.message {
+    padding: 12px 16px;
+    background: #fff3cd;
+    border: 1px solid #ffecb5;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    color: #664d03;
+    font-size: 0.95em;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.btn-small {
+    padding: 8px 14px;
+    font-size: 0.9em;
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--bg);
+    padding: 12px 8px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9em;
+}
+
+td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 0.95em;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+}

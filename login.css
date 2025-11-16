@@ -1,0 +1,191 @@
+/* ============================================================
+   LOGIN PAGE - STYLESHEET
+   ============================================================ */
+
+:root {
+	--bg: #f4f7fb;
+	--card: #fff;
+	--accent: #2b6cb0;
+}
+
+/* ============================================================
+   GLOBAL & BODY
+   ============================================================ */
+
+body {
+	font-family: Segoe UI, Roboto, Arial, sans-serif;
+	margin: 0;
+	min-height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Background with blur effect */
+html, body {
+	background-color: transparent;
+	height: 100%;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image: url('background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	filter: blur(3px);
+	z-index: -2;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	filter: blur(3px);
+	z-index: -3;
+}
+
+.bg-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(244,247,251,0.02); 
+	z-index: -1;
+	pointer-events: none;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+	background: var(--accent);
+	color: white;
+	padding: 1rem;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.header h1 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+/* ============================================================
+   CONTAINER & CARD
+   ============================================================ */
+
+.container {
+	display: flex;
+	justify-content: flex-end;
+	padding: 2rem;
+	height: calc(100vh - 4rem - 64px);
+	position: relative;
+	z-index: 1;
+}
+
+.card {
+	background: var(--card);
+	padding: 24px;
+	border-radius: 8px;
+	box-shadow: 0 6px 18px rgba(12, 24, 40, 0.08);
+	width: 360px;
+	height: fit-content;
+	margin-right: 2rem;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h2 {
+	margin: 0 0 12px;
+	font-size: 20px;
+	color: #0f1724;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+
+.field {
+	margin-bottom: 12px;
+}
+
+label {
+	display: block;
+	font-size: 13px;
+	margin-bottom: 6px;
+	color: #334155;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	outline: none;
+	border-color: var(--accent);
+	box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+button {
+	padding: 10px 24px;
+	border-radius: 6px;
+	border: 0;
+	background: var(--accent);
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background 0.2s;
+}
+
+button:hover {
+	background: #1e40af;
+}
+
+/* ============================================================
+   MESSAGES & ALERTS
+   ============================================================ */
+
+.message {
+	padding: 10px;
+	border-radius: 6px;
+	background: #fff3cd;
+	color: #664d03;
+	border: 1px solid #ffecb5;
+	margin-bottom: 12px;
+}
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+
+.small {
+	font-size: 13px;
+	color: #475569;
+}
